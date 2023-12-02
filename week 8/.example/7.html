@@ -1,0 +1,16 @@
+<html>
+<head>
+<script>
+const getdata = async () => {
+	const response = await fetch("http://www.kencosh.com/calendar/calendar.php");
+	const jsondates = await response.json();
+	console.log(jsondates);
+}
+getdata();
+</script>
+</head>
+<body>
+
+
+</body>
+</html>

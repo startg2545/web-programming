@@ -1,0 +1,5 @@
+<link rel=”stylesheet” href=”mystyle.css” type=”text/css”>
+heading, .subheading, .details { font-family:arial; color:red; background:blue; }
+.heading { font-size:14pt; }
+.subheading { font-size:12pt; }
+.details { font-size:10pt; } 

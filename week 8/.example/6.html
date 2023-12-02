@@ -1,0 +1,29 @@
+	<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script>
+	function update(){
+		fetch("http://www.kencosh.com/calendar/calendar.php")
+		.then(response => {
+			return response.json();
+		})
+		.then(data=> {
+			data.forEach(date => {
+				console.log(date);
+			})
+		})
+	}
+	</script>
+</head>
+<body>
+	<div id="click" onclick="update()">Click Me!</div>
+	<div id="here"></div>
+
+</body>
+</html>
+
+
+
+

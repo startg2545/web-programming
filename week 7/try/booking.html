@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>Appointment</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style type="text/css">
+  .head{
+    font-size: 50px;
+    font-family: "ayar_juno";
+  }
+  @font-face{
+		font-family: "ayar_juno";
+		src: url('font/ayar_juno.ttf');
+	}
+</style>
+</head>
+<body>
+  <div style="text-align: center;white-space: pre;">
+    <form action="booking.html" method="post">
+      <div class="head" style="margin: 0; display:inline; white-space:normal;">
+        <b>Appointment</b>
+      </div>
+
+      <div style="margin: 0; display:inline; white-space:initial;">
+        <label for="date"><b>Date</b></label>
+        <input type="date" placeholder="Enter date" id="date"
+         key="date" name="date" required>
+        <span id="date"></span>
+  
+        <label for="time"><b>Time</b></label>
+        <input type="time" placeholder="Enter time" id="time"
+        key="time" name="time" required>
+        <span id="time"></span>
+      </div>
+
+      <label for="title"><b>Title</b></label>
+      <input type="text" placeholder="Enter title" id="title"
+      key="title" name="title" required>
+
+      <label for="description"><b>Description</b></label>
+      <textarea id="descript" name="descript" rows="4" cols="50" 
+      placeholder="What do you think?" required></textarea>
+
+      <label style="margin: 0; display:inline; white-space: normal;">
+        <button type="button"><a href="login.html">Cancel</a></button>
+        <button type="submit" id="submit" value="submit">Submit</button>
+      </label>
+    </form>
+  </div>
+
+    <script>
+      var date = document.getElementById('date');
+      var time = document.getElementById('time');
+      var title = document.getElementById('title');
+      var descript = document.getElementById('descript');
+
+      window.localStorage // to store information 
+      
+      // your local storage will be in window
+      function myStorage() {
+            try {
+                return 'localStorage' in window && window['localStorage'] !== null;
+            } catch (e) {
+                return false;
+            }
+        }   
+
+      $("submit").addEventListener("click",function(e){
+        if(title.value.length!=0 && descript.value.length!=0 &&
+        date.value.length!=0 && time.value.length!=0){
+          localStorage.setItem('dateSet',date.value);
+          localStorage.setItem('timeSet',time.value);
+          localStorage.setItem('titleSet',title.value);
+          localStorage.setItem('descriptSet',descript.value);
+          alert(date.value);
+        }
+      });
+
+      function $(id)
+      {
+        return document.getElementById(id); // <--- I don't actual know how this work
+      }
+        // let x = $("uname");
+        // x.addEventListener("focus", unamefocus, true);
+        // x.addEventListener("blur", unameblur, true);
+        
+        // function unamefocus()
+        // {
+        //     $("uname").style.backgroundColor = "yellow";
+
+        // }
+        // function unameblur()
+        // {
+        //     $("uname").style.backgroundColor = "green";
+        // }
+    </script>
+    
+</body>
+</html>
